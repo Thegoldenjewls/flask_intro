@@ -1,12 +1,16 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    user = {
+        'username': 'brians',
+        'email': 'brain@codingtemple.com'
+    }
+    return render_template('index')
 
 
 @app.route("/test")
 def test():
-    return 
+    return 'this is a prueba'
